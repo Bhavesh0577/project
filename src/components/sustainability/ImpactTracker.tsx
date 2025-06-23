@@ -242,19 +242,19 @@ export default function ImpactTracker() {
                   <div className="space-y-3">
                     <h4 className="font-medium text-sm">Critical Planetary Indicators</h4>
                     <div className="grid grid-cols-1 gap-2 text-sm">
-                      <div className="flex justify-between items-center p-2 bg-red-50 rounded">
+                      <div className="flex justify-between items-center p-2 bg-gray rounded">
                         <span>CO₂ Levels</span>
                         <Badge variant="destructive">{globalData.globalMetrics.co2Levels} ppm</Badge>
                       </div>
-                      <div className="flex justify-between items-center p-2 bg-orange-50 rounded">
+                      <div className="flex justify-between items-center p-2 bg-gray rounded">
                         <span>Temperature Anomaly</span>
                         <Badge variant="secondary">+{globalData.globalMetrics.globalTemperatureAnomaly}°C</Badge>
                       </div>
-                      <div className="flex justify-between items-center p-2 bg-green-50 rounded">
+                      <div className="flex justify-between items-center p-2 bg-gray rounded">
                         <span>Renewable Energy</span>
                         <Badge variant="outline">{globalData.globalMetrics.renewableEnergyShare}%</Badge>
                       </div>
-                      <div className="flex justify-between items-center p-2 bg-blue-50 rounded">
+                      <div className="flex justify-between items-center p-2 bg-gray rounded">
                         <span>Biodiversity Index</span>
                         <Badge variant="secondary">{globalData.globalMetrics.biodiversityIndex}</Badge>
                       </div>
