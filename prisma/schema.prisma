@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL") // Neon connection string with connection pooling
+  directUrl = env("DATABASE_URL_UNPOOLED") // Direct connection to Neon database
+}
+
+model Idea {
+  id          String   @id @default(uuid())
+  created_at  DateTime @default(now())
+  title       String
+  description String
+  flowchart   String
+  user_id     String?
+}
+
+model TeamMessage {
+  id         String   @id @default(cuid())
+  teamId     String
+  sender     String
+  senderName String?
+  message    String
+  createdAt  DateTime @default(now())
+}
+
+model TeamProfile {
+  id           String   @id @default(cuid())
+  teamId       String   @unique
+  name         String?
+  email        String?
+  role         String?
+  techStack    String?
+  skills       String?
+  availability Json?    @default("[]")
+  lookingFor   Json?    @default("[]")
+  githubRepo   String?
+  discordLink  String?
+  createdAt    DateTime @default(now())
+}
