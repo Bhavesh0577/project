@@ -83,3 +83,31 @@ For production (Bolt.new):
 - Consider upgrading to production keys for live use
 - Use production database instance
 - Ensure all domains are whitelisted in Clerk dashboard
+
+⚠️ **IMPORTANT FOR BOLT.NEW USERS**: If you're seeing a "clerk.accounts.dev refused to connect" error, follow the steps below.
+
+## 🚨 Bolt.new Clerk Authentication Fix
+
+If you're getting the error shown in the image (`smart-falcon-81.clerk.accounts.dev refused to connect`), here's how to fix it:
+
+### Quick Fix Steps:
+
+1. **In your Clerk Dashboard** (https://dashboard.clerk.com):
+
+   - Go to your application setting
+   - Navigate to "Domains" section
+   - Add your Bolt.new URL as an allowed domain
+   - Format: `https://your-project-name.bolt.new`
+   - Also add: `https://*.bolt.new` as a wildcard
+
+2. **Set Environment Variables in Bolt.new**:
+
+   - Go to your Bolt.new project settings
+   - Add these environment variables:
+
+   ```
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_c21hcnQtZmFsY29uLTgxLmNsZXJrLmFjY291bnRzLmRldiQ
+   CLERK_SECRET_KEY=sk_test_u10W5peXKKF3k6NpDX5im7Drrt4SEFAwiO1vVWWdEv
+   ```
+
+3. **Alternative**: The app includes a fallback mode that will work without Clerk if needed.
