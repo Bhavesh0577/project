@@ -177,8 +177,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-background z-0"></div>
           {/* Floating Elements */}
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-1/4 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute -bottom-24 left-1/3 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/4 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse [animation-delay:1s]"></div>
+          <div className="absolute -bottom-24 left-1/3 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse [animation-delay:2s]"></div>
           {/* Grid Pattern */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGZpbGw9IiMxODE4MTgiIGQ9Ik0wIDBoNjB2NjBIMHoiLz48cGF0aCBkPSJNMzYgMzBoLTJWMGgydjMwem0tMTAgMGgtMlYwaDF2MzB6bTIwIDBINDRWMGgxdjMwem0tMjAgMEgyNFYwaDJ2MzB6TTEyIDMwSDEwVjBoMnYzMHptMjAgMGgtMVYwaDF2MzB6TTIyIDMwaC0xVjBoMXYzMHptMjAgMGgtMlYwaDJ2MzB6IiBmaWxsPSIjMjkyOTI5IiBmaWxsLXJ1bGU9Im5vbnplcm8iIG9wYWNpdHk9Ii4yIi8+PHBhdGggZD0iTTYwIDMwSDMwVjBoMzB2MzB6IiBmaWxsPSIjMjkyOTI5IiBmaWxsLXJ1bGU9Im5vbnplcm8iIG9wYWNpdHk9Ii4xIi8+PC9nPjwvc3ZnPg==')] opacity-5 dark:opacity-[0.025]"></div>
 
@@ -228,11 +228,7 @@ export default function Home() {
               {["AI-Powered", "Global Collaboration", "Sustainability Tracking", "Startup Acceleration"].map((tag, i) => (
                 <div 
                   key={i} 
-                  className="px-4 py-2 bg-background/40 dark:bg-muted/10 backdrop-blur-lg rounded-lg border border-muted/30 dark:border-muted/10 text-sm font-medium"
-                  style={{ 
-                    transform: `perspective(1000px) rotateX(${Math.sin(i) * 5}deg) rotateY(${Math.cos(i) * 5}deg)`,
-                    animationDelay: `${i * 0.2}s`
-                  }}
+                  className={`px-4 py-2 bg-background/40 dark:bg-muted/10 backdrop-blur-lg rounded-lg border border-muted/30 dark:border-muted/10 text-sm font-medium transform-gpu hover:scale-105 transition-transform duration-300 animate-pulse [animation-delay:${i * 200}ms]`}
                 >
                   {tag}
                 </div>
@@ -248,8 +244,7 @@ export default function Home() {
               {stats.map((stat, i) => (
                 <div 
                   key={i} 
-                  className={`text-center transition-all duration-700 ease-out ${statsLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-                  style={{ transitionDelay: `${i * 150}ms` }}
+                  className={`text-center transition-all duration-700 ease-out ${statsLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'} [transition-delay:${i * 150}ms]`}
                 >
                   <div className="text-3xl md:text-4xl font-bold text-primary">{stat.value}</div>
                   <div className="text-sm md:text-base text-muted-foreground mt-1">{stat.label}</div>
