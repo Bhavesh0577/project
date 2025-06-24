@@ -9,6 +9,7 @@ import { useUser } from '@clerk/nextjs';
 import { useRouter } from 'next/navigation';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Icons } from '@/components/icons';
+import BoltBadge from '@/components/BoltBadge';
 
 export default function Home() {
   const { isLoaded, isSignedIn, user } = useUser();
@@ -166,6 +167,9 @@ export default function Home() {
   // Only render the original content if authenticated
   return (
     <div className="flex min-h-screen flex-col">
+      {/* Official Bolt.new Badge - Top Right */}
+      <BoltBadge />
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative w-full py-20 md:py-32 overflow-hidden">
@@ -562,9 +566,21 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-muted/20 pt-6 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-muted-foreground mb-4 md:mb-0">
-              &copy; {new Date().getFullYear()} HackFlow. All rights reserved.
-            </p>
+            <div className="flex flex-col md:flex-row items-center gap-4 mb-4 md:mb-0">
+              <p className="text-sm text-muted-foreground">
+                &copy; {new Date().getFullYear()} HackFlow. All rights reserved.
+              </p>
+              <Link 
+                href="https://bolt.new" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-1 group"
+              >
+                <span>Built with</span>
+                <span className="text-primary group-hover:animate-pulse">⚡</span>
+                <span className="font-semibold">Bolt.new</span>
+              </Link>
+            </div>
             <div className="flex items-center gap-4">
               <Link href="/" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
