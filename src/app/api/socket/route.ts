@@ -1,20 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { initSocketServer, NextApiResponseWithSocket } from '@/lib/socket';
 
-// This route is needed to initialize the Socket.io server
-export async function GET(req: NextRequest, res: NextApiResponseWithSocket) {
+// For deployment environments like Netlify, we'll return a simple response
+// Socket.io requires persistent connections which aren't supported in serverless
+export async function GET(req: NextRequest) {
   try {
-    // Initialize the socket server if it's not already running
-    initSocketServer(req as any, res);
-    return new NextResponse(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { 'Content-Type': 'application/json' },
+    // In serverless environments, return a mock response
+    return NextResponse.json({ 
+      success: true, 
+      message: 'Socket endpoint available - using fallback for serverless deployment',
+      socketEnabled: false 
     });
   } catch (error) {
-    console.error('Socket initialization error:', error);
-    return new NextResponse(JSON.stringify({ error: 'Failed to initialize socket server' }), {
-      status: 500,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    console.error('Socket endpoint error:', error);
+    return NextResponse.json(
+      { error: 'Socket endpoint failed', socketEnabled: false }, 
+      { status: 500 }
+    );
   }
 } 

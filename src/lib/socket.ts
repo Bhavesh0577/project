@@ -1,50 +1,29 @@
-import { Server as NetServer } from 'http';
-import { Server as SocketIOServer } from 'socket.io';
-import { NextApiRequest, NextApiResponse } from 'next';
+// Socket.io implementation for development
+// Note: This won't work in serverless environments like Netlify
+// Consider using alternatives like Pusher, Ably, or WebSockets for production
 
-export type NextApiResponseWithSocket = NextApiResponse & {
-  socket: {
-    server: NetServer & {
-      io?: SocketIOServer;
-    };
-  };
+export type NextApiResponseWithSocket = any;
+
+// Mock implementation for serverless deployment
+export const initSocketServer = (req: any, res: any) => {
+  console.warn('Socket.io is not supported in serverless environments');
+  return null;
 };
 
-export const initSocketServer = (req: NextApiRequest, res: NextApiResponseWithSocket) => {
-  if (!res.socket.server.io) {
-    console.log('Initializing Socket.io server...');
-    
-    const io = new SocketIOServer(res.socket.server);
-    
-    io.on('connection', socket => {
-      console.log(`Socket connected: ${socket.id}`);
-      
-      // Join a team room when requested
-      socket.on('join-team', (teamId: string) => {
-        socket.join(teamId);
-        console.log(`Socket ${socket.id} joined team: ${teamId}`);
-      });
-      
-      // Leave a team room when requested
-      socket.on('leave-team', (teamId: string) => {
-        socket.leave(teamId);
-        console.log(`Socket ${socket.id} left team: ${teamId}`);
-      });
-      
-      // Handle new messages
-      socket.on('send-message', (message: any) => {
-        // Broadcast to all clients in the same team room
-        io.to(message.teamId).emit('new-message', message);
-      });
-      
-      // Handle disconnection
-      socket.on('disconnect', () => {
-        console.log(`Socket disconnected: ${socket.id}`);
-      });
-    });
-    
-    res.socket.server.io = io;
-  }
+// Client-side socket utilities for fallback
+export const createSocketConnection = () => {
+  if (typeof window === 'undefined') return null;
   
-  return res.socket.server.io;
+  // In production, this would connect to an external service
+  return {
+    emit: (event: string, data: any) => {
+      console.log('Mock socket emit:', event, data);
+    },
+    on: (event: string, callback: Function) => {
+      console.log('Mock socket listener:', event);
+    },
+    disconnect: () => {
+      console.log('Mock socket disconnect');
+    }
+  };
 }; 

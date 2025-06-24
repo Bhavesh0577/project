@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "setup-db": "node setup-neon-db.js",
-    "postinstall": "npm install pg @types/pg --save-dev"
+    "postinstall": "npm install pg @types/pg --save-dev",
+    "build:deploy": "NODE_ENV=production next build"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.19.4",
