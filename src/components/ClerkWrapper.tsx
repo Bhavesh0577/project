@@ -10,7 +10,8 @@ const isBoltEnvironment = () => {
   if (typeof window === 'undefined') return false;
   return window.location.hostname.includes('bolt.new') || 
          window.location.hostname.includes('stackblitz.com') ||
-         window.location.hostname.includes('localhost') ;
+         window.location.hostname.includes('localhost') ||
+         window.location.hostname.includes('webcontainer');
 };
 
 // Enhanced Clerk configuration for different environments
