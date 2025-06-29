@@ -124,13 +124,6 @@ export default function Home() {
       cta: "Join Global Hub"
     },
     {
-      icon: <Brain className="h-10 w-10" />,
-      title: "AI Team Matching",
-      description: "Intelligent team formation based on skills and collaboration patterns.",
-      link: isSignedIn ? "/ai-matching" : "/sign-in",
-      cta: "Smart Matching"
-    },
-    {
       icon: <Target className="h-10 w-10" />,
       title: "Impact Tracker",
       description: "Measure your project's sustainability and social impact with blockchain verification.",

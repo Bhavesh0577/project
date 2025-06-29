@@ -9,6 +9,7 @@ import { toast } from 'sonner';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Skeleton } from "@/components/ui/skeleton";
 import WithAuth from '@/components/auth/WithAuth';
+import BoltBadge from '@/components/BoltBadge';
 
 type Hackathon = {
   id: string;
@@ -70,6 +71,7 @@ export default function HackathonFinderPage() {
 
   return (
     <WithAuth>
+    <BoltBadge /> 
     <div className="container mx-auto py-10 px-4">
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Hackathon Finder</h1>

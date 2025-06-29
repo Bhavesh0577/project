@@ -14,6 +14,7 @@ import { useRouter } from 'next/navigation';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Icons } from "@/components/icons";
 import WithAuth from '@/components/auth/WithAuth';
+import BoltBadge from '@/components/BoltBadge';
 
 export default function IdeaGenerationPage() {
   const [title, setTitle] = useState('');
@@ -86,8 +87,10 @@ export default function IdeaGenerationPage() {
   };
 
   return (
-    
+      
+
       <div className="container mx-auto py-10 px-4">
+        <BoltBadge /> 
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight mb-2 text-foreground">Generate Project Idea</h1>
           <p className="text-muted-foreground">
