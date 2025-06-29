@@ -141,7 +141,7 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "HackFlow's AI matching helped us form the perfect team. We won our first international hackathon!",
+      quote: "Hackonnect's AI matching helped us form the perfect team. We won our first international hackathon!",
       author: "Sarah Chen",
       role: "Software Engineer"
     },
@@ -151,7 +151,7 @@ export default function Home() {
       role: "UI/UX Designer"
     },
     {
-      quote: "From idea to funded startup in 6 months - HackFlow's accelerator tools made it possible.",
+      quote: "From idea to funded startup in 6 months - Hackonnect's accelerator tools made it possible.",
       author: "Priya Sharma",
       role: "Startup Founder"
     }
@@ -183,7 +183,7 @@ export default function Home() {
                 </div>
                 <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl dark:text-white">
                   <span className="relative">
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 dark:from-primary dark:to-primary/80">HackFlow</span>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/70 dark:from-primary dark:to-primary/80">Hackonnect</span>
                     <span className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent rounded-full"></span>
                   </span>
                 </h1>
@@ -464,7 +464,7 @@ export default function Home() {
                   Ready to Build the Future?
                 </h2>
                 <p className="text-lg text-muted-foreground md:text-xl max-w-[600px] mx-auto">
-                  Join thousands of innovators using HackFlow to create impactful projects, form global teams, and launch successful startups.
+                  Join thousands of innovators using Hackonnect to create impactful projects, form global teams, and launch successful startups.
                 </p>
                 <div className="pt-4">
                   <Button size="lg" className="h-12 px-8 text-base group relative overflow-hidden" asChild>
@@ -489,7 +489,7 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <RocketIcon className="h-6 w-6 text-primary" />
-                <span className="text-xl font-bold">HackFlow</span>
+                <span className="text-xl font-bold">Hackonnect</span>
               </div>
               <p className="text-sm text-muted-foreground max-w-xs">
                 Building the next generation of tools for hackathon participants and global innovators.
@@ -556,7 +556,7 @@ export default function Home() {
           <div className="border-t border-muted/20 pt-6 flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-col md:flex-row items-center gap-4 mb-4 md:mb-0">
               <p className="text-sm text-muted-foreground">
-                &copy; {new Date().getFullYear()} HackFlow. All rights reserved.
+                &copy; {new Date().getFullYear()} Hackonnect. All rights reserved.
               </p>
               <Link 
                 href="https://bolt.new" 
