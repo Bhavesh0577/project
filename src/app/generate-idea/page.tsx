@@ -185,7 +185,7 @@ export default function IdeaGenerationPage() {
                         {generatedIdea ? (
                           <StructuredIdea ideaText={generatedIdea} />
                         ) : (
-                          <span className="text-muted-foreground">No idea generated yet.</span>
+                          <span className="text-muted-foreground">No idea generated yet</span>
                         )}
                       </div>
                     </div>
