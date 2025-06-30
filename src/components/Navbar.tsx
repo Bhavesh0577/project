@@ -41,8 +41,6 @@ export default function Navbar() {
     { label: 'Analysis', path: '/analysis', icon: <BarChartIcon className="h-4 w-4" /> },
     { label: 'Resources Hub', path: '/resources', icon: <ChevronsLeftRightEllipsis className="h-4 w-4" />},
     { label: 'Team Chat', path: '/team/chat', icon: <MessageSquareIcon className="h-4 w-4" /> },
-    { label: 'Global Collab', path: '/collaboration', icon: <Globe className="h-4 w-4" /> },
-    { label: 'AI Matching', path: '/ai-matching', icon: <Brain className="h-4 w-4" /> },
     { label: 'Impact Tracker', path: '/sustainability', icon: <Target className="h-4 w-4" /> },
     { label: 'Startup Launch', path: '/launchpad', icon: <DollarSign className="h-4 w-4" /> },
   ];
