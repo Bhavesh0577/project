@@ -12,6 +12,7 @@ import { Label } from "@/components/ui/label";
 import { Leaf, Target, TrendingUp, Award, Globe, Users, Zap, Recycle, Heart, Shield, AlertCircle, CheckCircle } from 'lucide-react';
 import { toast } from 'sonner';
 import { useUser } from '@clerk/nextjs';
+import BoltBadge from '../BoltBadge';
 
 type SDGAlignment = {
   goal: number;
@@ -206,6 +207,7 @@ export default function ImpactTracker() {
 
   return (
     <div className="container mx-auto py-8 px-4">
+      <BoltBadge/>
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2 flex items-center gap-2">
           <Target className="h-8 w-8 text-green-500" />

@@ -13,6 +13,7 @@ import { useUser } from '@clerk/nextjs';
 import WithAuth from '@/components/auth/WithAuth';
 import ResourceList from '@/components/resources/ResourceList';
 import Link from 'next/link';
+import BoltBadge from '@/components/BoltBadge';
 // Types for resource recommendations
 type Resource = {
   name: string;
@@ -114,6 +115,7 @@ export default function ResourceHubPage() {
   return (
     <WithAuth>
       <div className="container mx-auto py-10 px-4">
+        <BoltBadge/>
         <div className="mb-8">
           <h1 className="text-3xl font-bold tracking-tight mb-2 text-foreground">Resource Hub</h1>
           <p className="text-muted-foreground">

@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Rocket, DollarSign, Users, TrendingUp, FileText, Video, Mic, Download, Play, Edit } from 'lucide-react';
 import { toast } from 'sonner';
+import BoltBadge from '../BoltBadge';
 
 type PitchSection = {
   id: string;
@@ -234,6 +235,7 @@ export default function LaunchAccelerator() {
 
   return (
     <div className="container mx-auto py-8 px-4">
+      <BoltBadge/>
       <div className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2 flex items-center gap-2">
           <Rocket className="h-8 w-8 text-primary" />

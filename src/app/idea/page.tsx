@@ -11,6 +11,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Skeleton } from "@/components/ui/skeleton";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import WithAuth from '@/components/auth/WithAuth';
+import BoltBadge from '@/components/BoltBadge';
 
 export default function IdeasPage() {
   const [ideas, setIdeas] = useState<Idea[]>([]);
@@ -72,6 +73,7 @@ export default function IdeasPage() {
   return (
     <WithAuth>
     <div className="container mx-auto py-10 px-4">
+      <BoltBadge/>
       <div className="flex justify-between items-center mb-8">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Saved Ideas</h1>
