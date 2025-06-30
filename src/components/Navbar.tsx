@@ -65,7 +65,7 @@ export default function Navbar() {
                 <RocketIcon className="h-6 w-6 text-primary group-hover:scale-110 transition-transform duration-300" />
               </div>
               <span className="text-xl font-bold bg-gradient-to-r from-primary via-primary/80 to-primary/60 bg-clip-text text-transparent tracking-tight">
-                HackFlow
+                Hackonnect
               </span>
             </Link>
           </div>
