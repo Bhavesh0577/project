@@ -28,7 +28,7 @@ The platform highlights potential differentiators based on historical data, incr
 
 With just your project details, we generate a complete pitch package – slide deck outlines, pitch scripts, and demo storyboards. This gives you a professional foundation for investor presentations.
 
-Watch how we can instantly turn this pitch script into professional narration using our AI Voice Generator. [Play audio sample] This audio can be downloaded and used in your pitch videos or presentations, giving you a polished, professional sound without expensive voice talent."
+Watch how we can instantly turn this pitch script into professional narration using our AI Voice Generator.  This audio can be downloaded and used in your pitch videos or presentations, giving you a polished, professional sound without expensive voice talent."
 
 ## Sustainability Tracker (2:20-2:35)
 "Our Impact Tracker analyzes your project's environmental and social impact, providing metrics on carbon footprint and alignment with UN Sustainable Development Goals.
